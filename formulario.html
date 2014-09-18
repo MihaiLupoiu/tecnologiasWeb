@@ -1,11 +1,88 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+<head><meta charset="UTF-8">
 <title>Formulario de ingreso</title>
 </head>
 <body>
+	<form method="post"><table border=0>
+		<tr>
+			<th colspan="2"><h1>Nuevo evento</h1></th>
+		</tr>
+		<tr>
+			<td><label>Nombre del evento</label></td>
+			<td><input type=text name="nombre" required></td>
+		</tr>
 
-patata
+		<tr>
+			<td><label>Fecha de inicio:</label></td>
+			<td><input type=date name="fecha_ini" required></td>
+		</tr>
 
+		<tr>
+			<td><label>Fecha de finalizacion:</label></td>
+			<td><input type=date name="fecha_fin" required></td>
+		</tr>
+
+		<tr>
+			<td><label>Precio en euros:</label></td>
+			<td><input type=number name="precio" required></td>
+		</tr>
+
+		<tr>
+			<td><label>Publico:</label></td>
+			<td><input type=radio name="publico" checked>Masculino<input type=radio name="publico">Femenino<input type=radio name="publico">Mixto</td>
+		</tr>
+
+		<tr>
+			<td><label>Maximo de asistentes:</label></td>
+			<td><input type=range min="100" max="1000" name="direccion" required></td>
+		</tr>
+
+		<tr>
+			<td><label>Provincia:</label></td>
+			<td><select name="lugar">
+				<option selected>Castellon</option>
+				<option>Valencia</option>
+				<option>Alicante</option>
+			</select>
+			</td>
+		</tr>
+
+		<tr>
+			<td><label>Recinto:</label></td>
+			<td><input type=text name="recinto" required></td>
+		</tr>
+
+		<tr>
+			<td><label>Tipo de evento:</label></td>
+			<td><select name="tipo">
+				<option selected>LanParty</option>
+				<option>Exposicion</option>
+				<option>Curso</option>
+				<option>Conferencia</option>
+
+			</select>
+			</td>
+		</tr>
+
+		<tr>
+			<td><label>Descripcion:</label></td>
+			<td><textarea rows="4" cols="20" name="descripcion" required></textarea></td>
+		</tr>
+
+		<tr>
+			<td><label>Imagen:</label></td>
+			<td><input type=file name="imagen" required></td>
+		</tr>
+
+		<tr>
+			<td><label>Email de contacto:</label></td>
+			<td><input type=mail name="mail" required></td>
+		</tr>
+
+		<tr>
+			<td><input type=submit value="Enviar"><input type=reset value="Borrar"></td>
+		</tr>
+	</table</form>
 </body>
 </html>
