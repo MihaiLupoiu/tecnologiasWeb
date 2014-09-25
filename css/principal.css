@@ -1,0 +1,60 @@
+body {
+	font-family: Verdana, sans-serif; font-size:0.8em;
+}
+
+header{
+	background-image: url('../iconos/fondo2.jpg');
+	border:1px solid grey; margin:5px; padding:10px;
+}
+
+nav, section, article, footer {
+	border:1px solid grey; margin:5px; padding:10px;
+}
+
+nav ul {
+	margin:0; 
+	padding:0;
+}
+        
+nav ul li {
+	display:inline; 
+	margin:5px;
+}
+
+.div_header_izquierda {
+	text-align: left;
+}
+
+.div_header_derecha {
+	text-align: right;
+	color: white;
+}
+
+.imagen_logo {
+	width: 100px;
+	height: auto;
+}
+
+#button {
+	padding-bottom: 10px; 
+}
+
+#button li {
+	display: inline;
+}
+
+#button li a {
+	font-family: Arial;
+	font-size: 15px;
+	text-decoration: none;
+	float: left;
+	padding: 1%;
+	background-color: #2175bc;
+	color: #fff;
+}
+
+#button li a:hover {
+	background-color: #2586d7;
+	margin-top: -2px;
+	padding-bottom: 12px;
+}
