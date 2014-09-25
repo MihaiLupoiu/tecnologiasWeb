@@ -1,5 +1,6 @@
 body {
 	font-family: Verdana, sans-serif; font-size:0.8em;
+    background-color: #DCDCDC;
 }
 
 header{
@@ -8,12 +9,7 @@ header{
 }
 
 nav, section, article, footer {
-	border:1px solid grey; margin:5px; padding:10px;
-}
-
-nav ul {
-	margin:0; 
-	padding:0;
+	border:1px solid grey; margin:5px 5px 5px 5px;
 }
         
 nav ul li {
@@ -36,25 +32,66 @@ nav ul li {
 }
 
 #button {
-	padding-bottom: 10px; 
+	padding-bottom: 1px; 
 }
 
 #button li {
 	display: inline;
+    background-color: red;
+}
+
+#categorias{
+    
+    
+    
+}
+
+table img{
+    width: 100px;
+}
+
+#nav_menu{
+    background-color: #2175bc;
+}
+
+.boton{ 
+    font-size:12px; 
+    font-family:Verdana,Helvetica; 
+    font-weight:bold; 
+    color:#0000FF; 
+    background:#A4C1FF; 
+    border:1px solid; 
+    width:120px; 
+    height:25px;
 }
 
 #button li a {
 	font-family: Arial;
-	font-size: 15px;
+	font-size: 14px;
 	text-decoration: none;
 	float: left;
-	padding: 1%;
-	background-color: #2175bc;
-	color: #fff;
+	width: 14%;
+    background-color: #2175bc;
+    color: #fff;
+    text-align: center;
+    border: 1px solid black;
+    margin: 2px;
 }
 
 #button li a:hover {
-	background-color: #2586d7;
-	margin-top: -2px;
-	padding-bottom: 12px;
+	background-color: black;    
+}
+
+article{
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+article h2{
+    text-align: center;
+}
+
+footer{
+    background: white;
+    text-align: left;
 }
