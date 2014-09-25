@@ -1,0 +1,96 @@
+body {
+	font-family: Verdana, sans-serif; font-size:0.8em;
+	background-color: #DCDCDC;
+}
+
+header{
+	background-image: url('../iconos/fondo2.jpg');
+	border:1px solid grey; margin:5px; padding:10px;
+}
+
+nav, section, article, footer {
+	border:1px solid grey; margin:5px 5px 5px 5px;
+}
+        
+nav ul li {
+	display:inline; 
+	margin:5px;
+}
+
+.div_header_izquierda {
+	text-align: left;
+}
+
+.div_header_derecha {
+	text-align: right;
+	color: white;
+}
+
+.imagen_logo {
+	width: 100px;
+	height: auto;
+}
+
+.boton{ 
+    font-size:12px; 
+    font-family:Verdana,Helvetica; 
+    font-weight:bold; 
+    color:#0000FF; 
+    background:#A4C1FF; 
+    border:0px; 
+    width:120px; 
+    height:25px; 
+} 
+
+#b_reset {  
+    margin: 0px 0px 0px 0px;
+}  
+
+#b_submit {  
+    margin: -25px 0px 0px 380px;   
+}
+
+#formul {  
+    padding: 20px 0px 0px 30px;   
+    font-family:verdana,arial; 
+    font-size:9pt; 
+}  
+
+.campos {  
+    font-family:verdana,arial;     
+    width: 500px;                  
+    font-size:8pt;                  
+    color:white;                 
+    border: 1px dotted #2175bc;          
+    background-color:grey;     
+} 
+
+#button {
+	padding-bottom: 1px; 
+}
+
+#button li {
+	display: inline;
+    background-color: red;
+}
+
+#nav_menu{
+    background-color: #2175bc;
+}
+
+#button li a {
+	font-family: Arial;
+	font-size: 14px;
+	text-decoration: none;
+	float: left;
+	width: 14%;
+    background-color: #2175bc;
+    color: #fff;
+    text-align: center;
+    border: 1px solid black;
+    margin: 2px;
+}
+
+#button li a:hover {
+	background-color: black;    
+}
