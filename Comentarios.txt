@@ -1,0 +1,3 @@
+Todo parece estar bien, pero por una extraña razón no inserta en la base de datos desde web. En cambio por consola introduzco exactamente los mismos datos y funciona. No he conseguido entender el error. Hemos dejado este apartado pendiente para que lo revise a ver que es lo que podría estar mal.
+
+No mostramos aún los datos por pantalla dado que no se muestran bien.

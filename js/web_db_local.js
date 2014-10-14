@@ -33,22 +33,8 @@ develup.webdb.add_evento = function(nombre, fecha_ini, fecha_fin, precio, public
    });
 }
 
-//Inserta en la base de datos un nombre todo y se le asigna una fecha
-develup.webdb.add_evento2 = function(vector) {
-    var db = develup.webdb.db;
-    //alert(nombre+" "+fecha_ini+" "+fecha_fin+" "+precio+" "+publico+" "+asistentes+" "+lugar+" "+recinto+" "+tipo);
-    db.transaction(function(tx){
-    tx.executeSql("INSERT INTO eventos(nombre, fecha_ini, fecha_fin, precio, publico, asistentes, lugar, recinto, tipo, descripcion, imagen, mail) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
-        vector,
-        develup.webdb.onSuccess,
-        develup.webdb.onError);
-   });
-}
-
-
 //Muestra por pantalla si ha habido un error
 develup.webdb.onError = function(tx, e) {
-    console.log(e.message);
     alert("There has been an error: " + e.message);
 }
 
@@ -59,15 +45,42 @@ develup.webdb.onSuccess = function(tx, r) {
     console.log("exit on success");
 }
 
+//========== Muesta Datos
+
+develup.webdb.getAllTodoItems = function(renderFunc) {
+        var db = html5rocks.webdb.db;
+        db.transaction(function(tx) {
+          tx.executeSql("SELECT * FROM eventos", [], renderFunc,
+              html5rocks.webdb.onError);
+        });
+      }
+      
+function loadTodoItems(tx, rs) {
+        var rowOutput = "";
+        var todoItems = document.getElementById("todoItems");
+        for (var i=0; i < rs.rows.length; i++) {
+          rowOutput += renderTodo(rs.rows.item(i));
+        }
+      
+        todoItems.innerHTML = rowOutput;
+      }
+
+unction renderTodo(row) {
+        return "<li>" + row.todo  + " [<a href='javascript:void(0);'  onclick='develup.webdb.deleteTodo(" + row.ID +");'>Delete</a>]</li>";
+      }
+
+//==================================
+
+
 //orden de ejecución de las funciones
 function init() {
-  develup.webdb.open();
-  develup.webdb.createTable();
+    develup.webdb.open();
+    develup.webdb.createTable();
+    develup.webdb.getAllTodoItems(loadTodoItems);
 }
 
 function addEvent(lista_datos_evento) {
     //alert('Dentro de db '+lista_datos_evento);
     console.log(lista_datos_evento);
-    develup.webdb.add_evento2(lista_datos_evento);
-    //develup.webdb.add_evento(lista_datos_evento[0], lista_datos_evento[1], lista_datos_evento[2], lista_datos_evento[3], lista_datos_evento[4], lista_datos_evento[5], lista_datos_evento[6], lista_datos_evento[7], lista_datos_evento[8], lista_datos_evento[9], lista_datos_evento[10], lista_datos_evento[11]);
+    develup.webdb.add_evento(lista_datos_evento[0], lista_datos_evento[1], lista_datos_evento[2], lista_datos_evento[3], lista_datos_evento[4], lista_datos_evento[5], lista_datos_evento[6], lista_datos_evento[7], lista_datos_evento[8], lista_datos_evento[9], lista_datos_evento[10], lista_datos_evento[11]);
 }
