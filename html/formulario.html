@@ -3,9 +3,10 @@
 <head><meta charset="UTF-8">
 <link href="../css/formulario.css" rel="StyleSheet">
 <title>Formulario de ingreso</title>
+    <script type="text/javascript" src="./../js/validador_formulario.js"></script>
     <script type="text/javascript" src="./../js/web_db_local.js"></script>
 </head>
-<body onload="init();">
+    <body onload="init();">
 	<header>
             <div class="div_header_derecha">Pepe, Salir</div>
             <div class="div_header_izquierda"><img class="imagen_logo" src="../Iconos/develup.jpg" /></div>
@@ -24,7 +25,7 @@
     <div id="formul">
         
     <h1>Nuevo evento</h1>
-	<form id="form_evento" type="post" onsubmit="addEvent();">
+	<form id="form_evento" type="post" onsubmit="validacion();"><!--if(valida) addtodo();-->
 			<p>Nombre del evento <br />
 			<input class="campos" type=text name="nombre" id="nombre" required></p>
 
@@ -72,18 +73,17 @@
 			<input class="campos" type=file name="imagen" id="imagen"></p>
 		
 			<p>Email de contacto <br />
-			<input class="campos" type=mail name="mail" id="mail" required></p>
+			<input class="campos" type=mail name="mail" id="mail" ></p>
 
 			<div id="b_reset">  
         	<input class="boton" type="reset" value="Restablecer" name="B2"> 
         	</div> 
          
         	<div id="b_submit"> 
-        	<input class="boton" type="submit" value="Enviar mensaje" name="B1"> 
+        	<input class="boton" type="submit" value="Enviar" name="B1"> 
         	</div> 
 		</form>
 	</div>
-    
     
 </body>
 </html>
