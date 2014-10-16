@@ -17,7 +17,7 @@ develup.webdb.open = function() {
 develup.webdb.createTable = function() {
   var db = develup.webdb.db;
   db.transaction(function(tx) {
-    tx.executeSql("CREATE TABLE IF NOT EXISTS eventos(ID INTEGER PRIMARY KEY ASC, nombre TEXT, fecha_ini DATETIME, fecha_fin DATETIME, precio INTEGER, publico TEXT, asistentes INTEGER, lugar TEXT, recinto TEXT, tipo TEXT, descripcion TEXT, imagen TEXT, mail TEXT)", []);
+    tx.executeSql("CREATE TABLE IF NOT EXISTS eventos(ID INTEGER PRIMARY KEY ASC, nombre TEXT, fecha_ini TEXT, fecha_fin TEXT, precio TEXT, publico TEXT, asistentes TEXT, lugar TEXT, recinto TEXT, tipo TEXT, descripcion TEXT, imagen TEXT, mail TEXT)", []);
   });
 }
 
@@ -48,10 +48,10 @@ develup.webdb.onSuccess = function(tx, r) {
 //========== Muesta Datos
 
 develup.webdb.getAllTodoItems = function(renderFunc) {
-        var db = html5rocks.webdb.db;
+        var db = develup.webdb.db;
         db.transaction(function(tx) {
           tx.executeSql("SELECT * FROM eventos", [], renderFunc,
-              html5rocks.webdb.onError);
+              develup.webdb.onError);
         });
       }
       
@@ -65,8 +65,17 @@ function loadTodoItems(tx, rs) {
         todoItems.innerHTML = rowOutput;
       }
 
-unction renderTodo(row) {
-        return "<li>" + row.todo  + " [<a href='javascript:void(0);'  onclick='develup.webdb.deleteTodo(" + row.ID +");'>Delete</a>]</li>";
+function renderTodo(row) {
+        return "<li>" + row.nombre  + " [<a href='javascript:void(0);'  onclick='develup.webdb.deleteTodo(" + row.ID +");'>Delete</a>]</li>";
+      }
+
+develup.webdb.deleteTodo = function(id) {
+        var db = develup.webdb.db;
+        db.transaction(function(tx){
+          tx.executeSql("DELETE FROM eventos WHERE ID=?", [id],
+              develup.webdb.onSuccess,
+              develup.webdb.onError);
+          });
       }
 
 //==================================
