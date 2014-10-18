@@ -42,12 +42,14 @@ nav ul li {
 
 #categorias{
     
-    
-    
 }
 
 table img{
     width: 100px;
+}
+
+table td{
+    text-align: center;
 }
 
 #nav_menu{
