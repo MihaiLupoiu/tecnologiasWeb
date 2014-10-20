@@ -4,9 +4,13 @@ CACHE MANIFEST
 # Vesion 1
 CACHE: 
 index.html
-Iconos/*
+Iconos/develup.jpg
+Iconos/dreamhack-logo.png
+Iconos/fondo2.jpg
+Iconos/fondo.jpg
+css/formulario.css
+css/principal.css
 css/*
-
 # Resources that require the user to be online. 
 NETWORK: 
 *

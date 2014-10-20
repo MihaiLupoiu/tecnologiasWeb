@@ -41,7 +41,7 @@ develup.webdb.onError = function(tx, e) {
 //Muestra todo los elementos de la base de datos
 develup.webdb.onSuccess = function(tx, r) {
   // re-render the data.
-    alert("Datos añadidos de forma satisfactoria.");
+    alert("Operacion realizada con exito.");
     console.log("exit on success");
 }
 
