@@ -1,15 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" ?> 
- <widget xmlns = "http://al204332.al.nisu.org" 
- xmlns:gap = "http://phonegap.com/ns/1.0" 
- id = "com.phonegap.example" 
- versionCode = "10" 
- version = "1.0.0" > 
- <!-- versionCode is optional and Android only --> 
- <name>DevelUP</name> 
- <description> 
- An example for phonegap build docs for DevelUP.
- </description> 
- <author href="https://build.phonegap.com" email="al204332@uji.es"> 
- Israel Ibañez y Mihai Lupoiu 
- </author> 
-</widget> 
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://al204332.al.nisu.org"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.phonegap.example"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>DevelUP</name>
+
+    <description>
+        An example for phonegap build docs for DevelUP.
+    </description>
+
+    <author href="https://build.phonegap.com" email="al204332@uji.es">
+        Israel Ibañez and Mihai Lupoiu  
+    </author>
+
+</widget>
