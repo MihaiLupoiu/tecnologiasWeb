@@ -3,6 +3,23 @@ var develup = {};
 develup.webdb = {};
 develup.webdb.db = null;
 
+//objeto evento
+
+var evento = new Object();
+evento.nombre = "nombre";
+evento.fecha_ini = "22-02-2014"
+evento.fecha_fin = "31-03-2014";
+evento.precio = "precio del evento";
+evento.publico = 500;
+evento.asistentes = "Mixto";
+evento.lugar = "Castellon";
+evento.recinto = "Ribalta";
+evento.tipo = "LanParty";
+evento.descripcion = "asdf";
+evento.imagen = "";
+evento.mail = "22@gmail.com";
+
+
 //Se crea la base de datos denominada "Todo" con un tamaño de 5Mb
 develup.webdb.open = function() {
   var dbSize = 5 * 1024 * 1024; // 5MB
