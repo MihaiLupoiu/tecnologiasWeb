@@ -27,17 +27,17 @@ echo PI*3;
 function concatenar($a)
 {
 
-$a="bienvenida/o";
+$a="bienvenida/o\n";
 echo $a;
-echo "aui";
+echo "aui\n";
 }
-concatenar("oo");
+concatenar("oo\n");
 
 
 $lista=array(1,2,3,4,5);
-
-for ($i=0;$i<$lista.length;$i++)
- echo $lista[$i];
+for ($i=0;$i<$lista.length;$i++){
+	echo $lista[$i];	
+} 
 
 $lista=array();
 $lista[]=1;
@@ -80,10 +80,16 @@ $messages = array(
 
 
 print_r($messages);
+echo "=========== POST ============";
 print_r ($_POST);
+echo "=========== GET  ============";
 print_r ($_GET);
+echo "=========== REQUEST ============";
 print_r ($_REQUEST);
+echo "=========== GLOBALS ============";
 print_r ($GLOBALS);
+echo "=========== COOKIE ============";
 print_r ($_COOKIE);
+echo "=========== SERVER ============";
 print_r ($_SERVER);
 ?>

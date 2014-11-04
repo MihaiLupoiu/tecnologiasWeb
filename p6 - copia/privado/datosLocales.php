@@ -4,7 +4,7 @@
 /*por seguridad datos conexión bd en fichero externo*/
 
     $hostname = "localhost";
-    $dbname = "alxxx";
-    $username = "alxxx";
-    $pw = "xxxx";
+    $dbname = "al204332";
+    $username = "al204332";
+    $pw = "Develupmola123";
 ?>
