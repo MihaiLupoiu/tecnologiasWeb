@@ -14,7 +14,7 @@ $query="CREATE TABLE IF NOT EXISTS usuariosDevelup (id INT(11) NOT NULL AUTO_INC
 	nombre VARCHAR(100), apellido VARCHAR(100), email VARCHAR(100), 
 	clave VARCHAR(25), PRIMARY KEY(id))";
 
-$db->exec($query);
+#$db->exec($query);
 
 /*
 unset ($pdo);
