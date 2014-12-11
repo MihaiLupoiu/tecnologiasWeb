@@ -1,41 +1,6 @@
-<!DOCTYPE HTML>
-<html>
-<head><meta charset="UTF-8">    
- <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="./bootstrap-3.2.0-dist/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="./bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="./bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
-    
-<title>Formulario de ingreso</title>
-    <script type="text/javascript" src="./../js/validador_formulario.js"></script>
-    <script type="text/javascript" src="./../js/web_db_local.js"></script>
-
-<link href="../css/formulario.css" rel="StyleSheet">
-
-    
-</head>
-    <body onload="init();">
-	<header>
-            <div class="div_header_derecha">Pepe, Salir</div>
-            <div class="div_header_izquierda"><img class="imagen_logo" src="../Iconos/develup.jpg" /></div>
-    </header>
-
-    <nav id="nav_menu">
-            <ul id="button">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="html5_form_elements.asp">Projects</a></li>
-                <li><a href="html5_semantic_elements.asp">Blog</a></li>
-                <li><a href="./listar.html">What we offer?</a></li>
-                <li><a href="html5_semantic_elements.asp">Contact us</a></li>
-                <li><a href="html5_semantic_elements.asp">About us</a></li>
-            </ul>
-    </nav> 
     <div id="formul">
-        
     <h1>Nuevo evento</h1>
-	<form id="form_evento" type="post" onsubmit="validacion();"><!--if(valida) addtodo();-->
+	<form id="form_evento" method="post" action="?accion=addEvent" onsubmit="validacion();">
 			<p>Nombre del evento <br />
 			<input class="campos" type=text name="nombre" id="nombre" required></p>
 
@@ -93,5 +58,3 @@
         	<input class="boton" type="submit" value="Enviar" name="B1"> 
         	</div> 
 		</form>
-</body>
-</html>

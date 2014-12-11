@@ -6,5 +6,5 @@
     $hostname = "localhost";
     $dbname = "al204332";
     $username = "al204332";
-    $pw = "Develupmola123";
+    $pw = "Patata098aa";
 ?>

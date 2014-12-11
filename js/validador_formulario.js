@@ -1,5 +1,3 @@
-document.write("<script type='text/javascript' src='./../js/web_db_local.js'></script>");
-
 function validacion() {
     //crear lista vacía para añadir los valores
     var lista_sql = ["SELECT", "DELETE", "FROM", "WHERE", "JOIN", "GROUP BY","*", "=", "%", "LIKE"];
@@ -37,7 +35,7 @@ function validacion() {
         }
     }
     lista_eventos = crearlista(inputs);
-    addEvent(lista_eventos);
+    return true;
 }
 
 function crearlista(lista_imputs){

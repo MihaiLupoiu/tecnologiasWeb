@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- html manifest="manifestMeu.appcache" -->
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/favicon.ico" />    
+    <title>DevelUp</title>
+     
+	<!-- Comentado temporalmente -->
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="./bootstrap-3.2.0-dist/css/bootstrap.min.css">-->
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="./bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">-->
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- <script src="./bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>-->
+    
+        <!-- [if lt IE 9] >
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+        </script>
+    <! [endif] -->
+    
+    <script type="text/javascript" src="./js/validador_formulario.js"></script>
+    <script type="text/javascript" src="./js/controlador.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <link href="css/principal.css" rel="StyleSheet">
+
+    </head>
+
+    <body>
+        
+        <header>
+            <div class="div_header_derecha">
+	        <a href="index.php?accion=login"><input type="button" value="{usuario_cuadro1}"></a>
+			<a href="index.php?accion={usuario_cuadro2}"><input type="button" value="{usuario_cuadro2}"></a>  
+            </div>
+            
+            <div class="div_header_izquierda"><img class="imagen_logo" src="Iconos/develup.jpg" /></div>
+        </header>
+        <nav id="nav_menu">
+            <ul id="button">
+                <li><a href="index.php?accion=inicio">Home</a></li>
+                <li><a href="html5_form_elements.asp">Projects</a></li>
+                <li><a href="html5_semantic_elements.asp">Blog</a></li>
+                <li><a href="index.php?accion=listar">What we offer?</a></li>
+                <li><a href="html5_semantic_elements.asp">Contact us</a></li>
+                <li><a href="html5_semantic_elements.asp">About us</a></li>
+            </ul>
+        </nav>
+		
+        <section>
+        <center>
+        <div id="mensaje">
+        {mensaje}
+		</div>
+        <div id="central">
+        {central}
+		</div>
+        </center>
+        </section>
+        		
+        <footer>
+        <p>&copy; 2014 DevelUP. All rights reserved.</p>
+        </footer>
+
+    </body>
+</html>
