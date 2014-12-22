@@ -112,7 +112,7 @@ case "registrar":
 		
 		#print_r($stmt);
 		#echo "patata" . $count. "patata";
-		$stmt->debugDumpParams();
+		#$stmt->debugDumpParams();
 		if ($count <= 0 ){
 			try{
 				$stmt = $db->prepare("INSERT INTO usuariosDevelup(nombre ,apellido, email, clave)  VALUES(?, ?, ?, ?)");
@@ -190,6 +190,51 @@ case "formularioAjax":
 	break;
 	
 case "addEvent":
+
+	if (isset($_REQUEST['type']) && $_REQUEST['type'] = 'Ajax'){
+
+		$fuente = file_get_contents('php://input');
+
+		$a=json_decode($fuente, true) ; //devuelve diccionario
+		
+		array_pop($a);
+		array_pop($a);
+
+		$fields=array_keys($a); // here you have to trust your field names! 
+		$values=array_values($a);
+		$fieldlist=implode(',',$fields);
+		$qs=str_repeat("?,",count($fields)-1);
+		try{
+			$sql="INSERT INTO eventos ($fieldlist) values(${qs}?)";
+			
+			$stmt = $db->prepare($sql);
+			$stmt->execute($values);
+		}catch(Exception $e)
+		{
+			echo 'Eerror '.$e->getMessage();
+		}
+
+		$result = "";
+		
+		$stmt = $db->prepare("SELECT * FROM eventos");
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		$fuente=" <h1>Evento añadido con exito. </h1><br>"; 
+		echo $fuente;
+
+		$texto = "<tr> <td> nombre </td><td> fecha inicio </td><td>fecha fin</td><td>precio</td><td>publico</td><td>asistentes</td><td>lugar</td><td>recinto</td><td>tipo</td><td>descripcion</td><td> imagen </td><td>mail</td></tr>";
+		for($i=0; $i<count($result); $i++) {
+			$fuente2 = "<tr>"."<td>".$result[$i]["nombre"]."</td>"."<td>".$result[$i]["fecha_ini"]."</td>"."<td>".$result[$i]["fecha_fin"]."</td>"."<td>".$result[$i]["precio"]."</td>"."<td>".$result[$i]["publico"]."</td>"."<td>".$result[$i]["asistentes"]."</td>"."<td>".$result[$i]["lugar"]."</td>"."<td>".$result[$i]["recinto"]."</td>"."<td>".$result[$i]["tipo"]."</td>"."<td>".$result[$i]["descripcion"]."</td>"."<td>".$result[$i]["imagen"]."</td>"."<td>".$result[$i]["mail"]."</td>"."</tr>";
+			$texto=$texto.$fuente2;
+		}
+		$fuente = '<div id="listEventos"><table id="todoItems" border="1" align="center">'.$texto.'</table> </div>';
+		echo $fuente;
+		
+		return 1;
+
+	}
+
 	if (isset($_POST['nombre'] )) {
 		$result = "";
 		try{
@@ -236,6 +281,13 @@ case "busqueda":
 	}else{
 		$html = str_replace('{tabla}', $texto, $html);
 	}
+	break;
+
+case "contactUs":
+
+	$fuente = file_get_contents('./html/contact.html');
+	$html = str_replace('{central}', $fuente, $html);
+	
 	break;
 
 default:

@@ -1,0 +1,70 @@
+ <h1>Contact Us</h1>
+
+ <h1>Usuarios Registrados</h1>
+        
+        <div id="usuariosRegistrados">
+        </div>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "http://al204332.al.nisu.org/version2/scrip_php/usuarios.php";
+
+xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        myFunction(xmlhttp.responseText);
+    }
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(response) {
+    var arr = JSON.parse(response);
+    var i;
+    var out = "<table>";
+    out += "<tr><td> Nombre </td><td> Apellido </td><td> Email </td></tr>"
+
+    for(i = 0; i < arr.length; i++) {
+        out += "<tr><td>" +
+        arr[i].Nombre +
+        "</td><td>" +
+        arr[i].Apellido +
+        "</td><td>" +
+        arr[i].Email +
+        "</td></tr>";
+    }
+    out += "</table>"
+    document.getElementById("usuariosRegistrados").innerHTML = out;
+}
+</script>
+
+<h1>Tiempo</h1>
+<div id="CastellonTiempo"></div>
+
+<script>
+var xmlhttp2 = new XMLHttpRequest();
+var url2 = "http://api.openweathermap.org/data/2.5/weather?q=Castellon,es";
+
+xmlhttp2.onreadystatechange=function() {
+    if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200) {
+        tiempo(xmlhttp2.responseText);
+    }
+}
+xmlhttp2.open("GET", url2, true);
+xmlhttp2.send();
+
+function tiempo(response) {
+    var arr = JSON.parse(response);
+    var i;
+    var out2 = "<table>";
+    out2 += "<tr><td> Tiempo </td><td> Lugar </td></tr>"
+
+     out2 += "<tr><td>" + "<img src=\"http://openweathermap.org/img/w/"+arr.weather[0].icon+".png\">" + "</td><td>" +
+    
+    arr.name +
+    "</td></tr>";
+
+    out2 += "</table>"
+    document.getElementById("CastellonTiempo").innerHTML = out2;
+}
+
+</script>
